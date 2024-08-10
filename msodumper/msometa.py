@@ -421,6 +421,9 @@ class FILETIME(OLERecord):
             pretty = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(sec))
         except ValueError:
             pretty = "ValueError"
+        except:
+            pretty = "UnexpectedError"
+
         print('<%s type="FILETIME" value="%d" pretty="%s"/>' % (self.name, sec, pretty))
         self.parent.pos = self.pos
 
